@@ -150,3 +150,25 @@ function isPieceKing() {
     }
     getAvailableSpaces();
 }
+/**
+ * Gets the moves that the selected piece can make
+ */
+
+function getAvailableSpaces() {
+    if (board[selectedPiece.indexOfBoardPiece + 7] === null &&
+        cells[selectedPiece.indexOfBoardPiece + 7].classList.contains("noPieceHere") !== true) {
+            selectedPiece.seventhSpace = true;
+        }
+    if (board[selectedPiece.indexOfBoardPiece + 9] === null && 
+        cells[selectedPiece.indexOfBoardPiece + 9].classList.contains("noPieceHere") !== true) {
+            selectedPiece.ninthSpace = true;
+        }    
+    if (board[selectedPiece.indexOfBoardPiece - 7] === null && 
+        cells[selectedPiece.indexOfBoardPiece - 7].classList.contains("noPieceHere") !== true) {
+            selectedPiece.minusSeventhSpace = true;
+        }   
+    if (board[selectedPiece.indexOfBoardPiece - 9] === null &&
+        cells[selectedPiece.indexOfBoardPiece - 9].classList.contains("noPieceHere") !== true) {
+            selectedPiece.minusNinthSpace = true;
+        }    
+}
