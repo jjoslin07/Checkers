@@ -45,7 +45,7 @@ let selectedPiece  = {
     minusEighteenthSpace: false
 }
 /**
- * Initialize event listeners pon pieces
+ * Initialize event listeners on pieces
  */
 function givePiecesEventListeners() {
     if (turn) {
@@ -57,4 +57,16 @@ function givePiecesEventListeners() {
             blackPieces[i].addEventListener("click", getPlayerPieces);
         }
     }
+}
+/**
+ * Hold the length of the players piece count
+ */
+function getPlayerPieces() {
+    if (turn) {
+        playerPieces = redPieces;
+    } else {
+        playerPieces = blackPieces;
+    }
+    removeCellonclick();
+    resetBoarders();
 }
