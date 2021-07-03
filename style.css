@@ -64,10 +64,10 @@ table {
     height: 30px;
     padding: 12px;
     background-color: black;
-    border: 2px inset lightgrey;
+    border: 2px inset white;
     border-radius: 50px;
-    box-shadow: 5px 5px 5px 1px black,
-        5px 5px 5px 1px black;
+    box-shadow: 0px 0px 5px 2px black,
+        5px 5px 5px 2px;
     ;
 }
 
@@ -76,10 +76,10 @@ table {
     height: 30px;
     padding: 12px;
     background-color: red;
-    border: 2px inset lightpink;
+    border: 2px inset white;
     border-radius: 50px;
-    box-shadow: -5px -5px 5px -1px red,
-        -5px -5px 5px -1px black;
+    box-shadow: 0px 0px 5px -2px red,
+        -5px -5px 5px -2px;
 }
 
 .king.red-piece {
