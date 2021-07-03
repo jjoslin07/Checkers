@@ -63,3 +63,92 @@ td {
     font-size: 40px;
     font-weight: 800;
 }
+
+@media screen and (max-width: 560px) {
+    .red-piece {
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    .black-piece {
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    td {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .red-turn-text {
+        font-size: 40px;
+    }
+
+    .black-turn-text {
+        font-size: 40px;
+    }
+
+    table {
+        margin: 0;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .red-turn-text {
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .red-piece {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    .black-piece {
+        height: 3vw;
+        width: 3vw;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .red-piece {
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+
+    .black-piece {
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .red-piece {
+        height: 1.5vw;
+        width: 1.5vw;
+    }
+
+    .black-piece {
+        height: 1.5vw;
+        width: 1.5vw;
+    }
+
+    .red-turn-text {
+        font-size: 35px;
+    }
+
+    .black-turn-text {
+        font-size: 35px;
+    }
+}
