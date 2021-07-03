@@ -1,10 +1,15 @@
 td {
-    background-color: red;
-    width: 65px;
-    height: 65px;
+    background-color:#BA7A3A;
+    width: 85px;
+    height: 85px;
     text-align: center;
 }
 
+.boardGame{
+    display: flex;
+    justify-content: center;
+}
+
 .noPieceHere {
-    background-color: black;
+    background-color: #f0d2b4;
 }
