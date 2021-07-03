@@ -28,8 +28,8 @@ let findPiece = function (pieceId) {
  */
 
 const cells = document.querySelectorAll("td");
-let redPieces = document.querySelectorAll("p");
-let blackPieces = document.querySelectorAll("span");
+let redsPieces = document.querySelectorAll("p");
+let blacksPieces = document.querySelectorAll("span");
 const redTurnText = document.querySelectorAll("red-turn-text");
 const blackTurnText = document.querySelectorAll("black-turn-text");
 const divider = document.querySelector("#divider");
@@ -300,5 +300,38 @@ function giveCellsClick() {
     }
     if (selectedPiece.minusEighteenthSpace) {
         cells[selectedPiece.indexOfBoardPiece -18].setAttribute("onlick", "makeMove(-18)");
+    }
+}
+
+/**
+ * Make piece move when the cell is clicked
+ */
+
+function makeMove(number) {
+    document.getElementById(selectedPiece.pieceId).remove();
+    cells[selectedPiece.indexOfBoardPiece].innerHTML = "";
+    if (turn) {
+        if (selectedPiece.isKing) {
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = '<p class="red-piece king" id="${selectedPiece.pieceId}"></p>';
+            redsPieces = document.querySelectorAll("p");
+        } else {
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = '<p class="red-piece" id="$selectedPiece.pieceId}"></p>';
+            redsPieces = document.querySelectorAll("p");
+        }
+    } else {
+        if (selectedPiece.isKing) {
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = '<span class="black-piece king" id="${selectedPiece.pieceId}"></span>';
+            blacksPieces = document.querySelectorAll("span");
+        } else {
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = '<span class="black-piece" id="${selectedPiece.pieceId}"></span>';
+            blacksPieces = document.querySelectorAll("span");
+        }
+    }
+
+    let indexOfPiece = selectedPiece.indexOfBoardPiece
+    if (number === 14 || number === -14 || number === 18 || number === -18) {
+        changeData(indexOfPiece, indexOfPiece + number, indexOfPiece + number / 2);
+    } else {
+        changeData(indexOfPiece, indexOfPiece + numnber);
     }
 }
