@@ -108,7 +108,7 @@ function removeCellonclick() {
 
 function resetBorders() {
     for (let i = 0; i < playerPieces.length; i++) {
-        playerPieces[i].style.border = "4px dotted white";
+        playerPieces[i].style.border = "4px double white";
     }
     resetSelectedPieceProperties();
     getSelectedPiece();
@@ -414,14 +414,14 @@ function changePlayer() {
     if (turn) {
         turn = false;
         for (let i = 0; i < redTurnText.length; i++) {
-            redTurnText[i].style.color = "lightGrey";
-            blackTurnText[i].style.color = "black";
+            redTurnText[i].style.color = "black";
+            blackTurnText[i].style.color = "white";
         }
     } else {
         turn = true;
         for (let i = 0; i < blackTurnText.length; i++) {
-            blackTurnText[i].style.color = "lightGrey";
-            redTurnText[i].style.color = "black";
+            blackTurnText[i].style.color = "black";
+            redTurnText[i].style.color = "white";
         }
     }
     givePiecesEventListeners();

@@ -3,6 +3,7 @@
 }
 
 main {
+    background: green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,9 +37,14 @@ td {
     height: 100px;
 }
 
+table {
+    box-shadow: 5px 5px 5px 5px black;
+
+}
+
 .red-turn-text {
     text-align: center;
-    color: black;
+    color: white;
     font-family: "open sans";
     font-size: 55px;
 }
@@ -47,7 +53,7 @@ td {
     text-align: center;
     font-family: "open sans";
     font-size: 55px;
-    color: lightgray;
+    color: black;
 }
 
 .black-piece {
@@ -55,8 +61,10 @@ td {
     height: 30px;
     padding: 12px;
     background-color: black;
-    border: 4px dotted white;
+    border: 4px double white;
     border-radius: 50px;
+    box-shadow: 5px 5px 5px 1px black;
+    ;
 }
 
 .red-piece {
@@ -64,8 +72,9 @@ td {
     height: 30px;
     padding: 12px;
     background-color: red;
-    border: 4px dotted white;
+    border: 4px double white;
     border-radius: 50px;
+    box-shadow: -5px -5px 5px -1px red;
 }
 
 .king.red-piece {
