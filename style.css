@@ -1,5 +1,5 @@
 td {
-    background-color:#BA7A3A;
+    background-color: #BA7A3A;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -14,6 +14,7 @@ td {
     border-radius: 50%;
     display: inline-block;
 }
+
 .red-piece {
     width: 30px;
     height: 30px;
@@ -24,11 +25,11 @@ td {
     display: inline-block;
 }
 
-.king .black-piece{
+.king.black-piece {
     background-color: purple;
 }
 
-.king .red-piece{
+.king.red-piece {
     background-color: orange;
 }
 
@@ -40,21 +41,25 @@ td {
     display: flex;
     justify-content: center;
 }
+
 .playersTurns {
     display: flex;
     justify-content: center;
-    padding:10px;
+    padding: 10px;
 
 }
-.black-turn-text{
+
+.black-turn-text {
     color: lightgrey;
 }
+
 .red-turn-text,
 .black-turn-text {
     padding: 10px;
     font-size: 30px;
 }
-#divider{
+
+#divider {
     font-size: 40px;
     font-weight: 800;
 }
