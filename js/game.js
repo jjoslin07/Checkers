@@ -14,8 +14,8 @@ const board = [
 ]
 
 /**
- * Cached Variables 
- * Parses pieceId's and returns the index of that piece's place on the baord
+ * Cached Variables
+ * parses pieceId's and returns the index of that piece's place on the board
  */
 
 let findPiece = function (pieceId) {
@@ -43,6 +43,9 @@ let redScore = 12;
 let blackScore = 12;
 let playerPieces;
 
+/**
+ * Selected piece properties
+ */
 
 let selectedPiece  = {
     pieceId: -1,
@@ -59,6 +62,7 @@ let selectedPiece  = {
 }
 
 /**
+ * Event Listeners
  * Initialize event listeners on pieces
  */
 
@@ -75,7 +79,8 @@ function givePiecesEventListeners() {
 }
 
 /**
- * Hold the length of the players piece count
+ * Logic
+ * Holds the length of the players piece count
  */
 
 function getPlayerPieces() {
@@ -89,7 +94,7 @@ function getPlayerPieces() {
 }
 
 /**
- * Removes the attribute onlick
+ * Removes possibole moves from the old selected piece (This is needed because the user might re-select a piece)
  */
 
 function removeCellonclick() {
@@ -171,4 +176,62 @@ function getAvailableSpaces() {
         cells[selectedPiece.indexOfBoardPiece - 9].classList.contains("noPieceHere") !== true) {
             selectedPiece.minusNinthSpace = true;
         }    
+        checkAvailableJumpSpaces();
+}
+/**
+ * Gets the moves that the selected piece can jump
+ */
+
+function checkAvailableJumpSpaces() {
+    if (turn) {
+        if (board[selectedPiece.indexOfBoardPiece + 14] === null
+            && cells[selectedPiece.indexOfBoardPiece + 14].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece + 7] >= 12) {
+            selectedPiece.fourteenthSpace = true;
+
+        }
+        if (board[selectedPiece.indexOfBoardPiece + 18] === null
+            && cells[selectedPiece.indexOfBoardPiece + 18].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece +9] >= 12) {
+                selectedPiece.eighteenthSpace = true;
+
+            }
+        if (board[selectedPiece.indexOfBoardPiece -14] === null
+            && cells[selectedPiece.indexOfBoardPiece -14].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece - 7] >= 12) {
+                selectedPiece.minusFourteenthSpace =true;
+
+            }   
+        if (board[selectedPiece.indexOfBoardPiece - 18] === null
+            && cells[selectedPiece.indexOfBoardPiece - 18].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece - 9] >= 12) {
+                selectedPiece.minusEighteenthSpace = true;
+
+            }    
+    } else {
+        if (board[selectedPiece.indexOfBoardPiece + 14] === null
+            && cells[selectedPiece.indexOfBoardPiece + 14].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece + 7] < 12 && board[selectedPiece.indexOfBoardPiece + 7] !== null) {
+                selectedPiece.fourteenthSpace = true;
+
+            }
+        if (board[selectedPiece.indexOfBoardPiece + 18] === null
+            && cells[selectedPiece.indexOfBoardPiece + 18].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece + 9] < 12 && board[selectedPiece.indexOfBoardPiece + 9] !== null) {
+                selectedPiece.eighteenthSpace = true;
+
+            }
+        if (board[selectedPiece.indexOfBoardPiece - 14] === null
+            && cells[selectedPiece.indexOfBoardPiece - 14].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece - 7] < 12 && board[selectedPiece.indexOfBoardPiece - 7] !== null) {
+                selectedPiece.minusFourteenthSpace = true;
+
+            }   
+    }   if (board[selectedPiece.indexOfBoardPiece - 18] === null
+            && cells[selectedPiece.indexOfBoardPiece - 18].classList.contains("noPieceHere") !== true
+            && board[selectedPiece.indexOfBoardPiece - 9] < 12 && board[selectedPiece.indexOfBoardPiece - 9] !== null) {
+                selectedPiece.minusEighteenthSpace = true;
+
+            }
+        checkPieceConditions();
 }
