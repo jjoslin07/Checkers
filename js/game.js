@@ -257,3 +257,17 @@ function checkPieceConditions() {
         givePieceBoarder();
     }
 }
+
+/**
+ * Gives the piece a green highlight for the user (showing its moveable)
+ */
+
+function givePieceBoarder() {
+    if (selectedPiece.seventhSpace || selectedPiece.ninthSpace || selectedPiece.fourteenthSpace || selectedPiece.eighteenthSpace
+        || selectedPiece.minusSeventhSpace || selectedPiece.minusNinthSpace || selectedPiece.minusFourteenthSpace || selectedPiece.minusEighteenthSpace) {
+            document.getElementById(selectedPiece.pieceId).style.border = "3px solid limegreen";
+            giveCellsClick();
+        } else {
+            return;
+        }
+}
