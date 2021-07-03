@@ -344,7 +344,7 @@ function makeMove(number) {
 function changeData(indexOfBoardPiece, modifiedIndex, removePiece) {
     board[indexOfBoardPiece] = null;
     board[modifiedIndex] = parseInt(selectedPiece.pieceId);
-    if (turn && selectedPiece.pieceId < 12 && modifiedIndex >= 57) {
+    if (turn && selectedPiece.pieceId < 12 && modifiedIndex >= 56) {
         document.getElementById(selectedPiece.pieceId).classList.add("king");
     }
     if (turn === false && selectedPiece.pieceId >= 12 && modifiedIndex <= 7) {
