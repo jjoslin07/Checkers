@@ -108,7 +108,7 @@ function removeCellonclick() {
 
 function resetBorders() {
     for (let i = 0; i < playerPieces.length; i++) {
-        playerPieces[i].style.border = "1px double white";
+        playerPieces[i].style.border = "4px dotted white";
     }
     resetSelectedPieceProperties();
     getSelectedPiece();

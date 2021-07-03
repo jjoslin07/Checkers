@@ -1,8 +1,53 @@
+* {
+    margin: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile {
+    display: none;
+}
+
+.desktop {
+    margin: 0;
+    width: 100%;
+
+}
+
+.noPieceHere {
+    background-color: #F0D2B4;
+}
+
 td {
+    text-align: center;
     background-color: #BA7A3A;
     width: 100px;
     height: 100px;
+}
+
+.red-turn-text {
     text-align: center;
+    color: black;
+    font-family: "open sans";
+    font-size: 55px;
+}
+
+.black-turn-text {
+    text-align: center;
+    font-family: "open sans";
+    font-size: 55px;
+    color: lightgray;
 }
 
 .black-piece {
@@ -10,9 +55,8 @@ td {
     height: 30px;
     padding: 12px;
     background-color: black;
-    border: 1px double white;
-    border-radius: 50%;
-    display: inline-block;
+    border: 4px dotted white;
+    border-radius: 50px;
 }
 
 .red-piece {
@@ -20,48 +64,30 @@ td {
     height: 30px;
     padding: 12px;
     background-color: red;
-    border: 1px double white;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.king.black-piece {
-    background-color: purple;
+    border: 4px dotted white;
+    border-radius: 50px;
 }
 
 .king.red-piece {
     background-color: orange;
 }
 
-.noPieceHere {
-    background-color: #f0d2b4;
+.king.black-piece {
+    background-color: purple;
 }
 
-.boardGame {
-    display: flex;
-    justify-content: center;
-}
-
-.playersTurns {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-
-}
-
-.black-turn-text {
-    color: lightgrey;
-}
-
-.red-turn-text,
-.black-turn-text {
-    padding: 10px;
-    font-size: 30px;
+p {
+    display: inline-block;
 }
 
 #divider {
-    font-size: 40px;
-    font-weight: 800;
+    font-size: 90px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+span {
+    display: inline-block;
 }
 
 @media screen and (max-width: 560px) {
