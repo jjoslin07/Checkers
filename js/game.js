@@ -1,7 +1,6 @@
 /**
  * Game State Data
  */
-
 const board = [
     null, 0, null, 1, null, 2, null, 3, 
     4, null, 5, null, 6, null, 7, null, 
@@ -16,7 +15,6 @@ const board = [
 /**
  * DOM references
  */
-
 const cells = document.querySelectorAll("td");
 let redPieces = document.querySelectorAll("p");
 let blackPieces = document.querySelectorAll("span");
@@ -27,7 +25,6 @@ const divider = document.querySelector("#divider");
 /**
  * Player Properties
  */
-
 let turn = true;
 let redScore = 12;
 let blackScore = 12;
@@ -46,4 +43,18 @@ let selectedPiece  = {
     minusNinthSpace: false,
     minusFourteenthSpace: false,
     minusEighteenthSpace: false
+}
+/**
+ * Initialize event listeners pon pieces
+ */
+function givePiecesEventListeners() {
+    if (turn) {
+        for (let i = 0; i < redPieces.length; i++) {
+            redPieces[i].addEventListener("click", getPlayerPieces);
+        }
+    } else {
+        for (let i = 0; i < blackPieces.length; i++) {
+            blackPieces[i].addEventListener("click", getPlayerPieces);
+        }
+    }
 }
