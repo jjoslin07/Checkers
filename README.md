@@ -6,3 +6,5 @@
 ### Coming Soon...
  - Double Jump
  - Triple Jump
+ - You vs CPU
+ - Winning Screen Fireworks
