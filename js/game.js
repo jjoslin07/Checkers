@@ -12,3 +12,14 @@ const board = [
     null, 16, null, 17, null, 18, null, 19, 
     20, null, 21, null, 22, null, 23, null 
 ]
+
+/**
+ * DOM references
+ */
+
+const cells = document.querySelectorAll("td");
+let redPieces = document.querySelectorAll("p");
+let blackPieces = document.querySelectorAll("span");
+const redTurnText = document.querySelectorAll("red-turn-text");
+const blackTurnText = document.querySelectorAll("black-turn-text");
+const divider = document.querySelector("#divider");
