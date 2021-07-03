@@ -21,6 +21,7 @@ td {
     background-color: red;
     border: 1px double white;
     border-radius: 50%;
+    display: inline-block;
 }
 
 .king .black-piece{
