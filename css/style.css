@@ -1,15 +1,40 @@
 td {
     background-color:#BA7A3A;
-    width: 85px;
-    height: 85px;
+    width: 100px;
+    height: 100px;
     text-align: center;
 }
 
-.boardGame{
-    display: flex;
-    justify-content: center;
+.black-piece {
+    width: 30px;
+    height: 30px;
+    padding: 12px;
+    background-color: black;
+    border: 1px double white;
+    border-radius: 50%;
+}
+.red-piece {
+    width: 30px;
+    height: 30px;
+    padding: 12px;
+    background-color: red;
+    border: 1px double white;
+    border-radius: 50%;
+}
+
+.king .black-piece{
+    background-color: purple;
+}
+
+.king .red-piece{
+    background-color: orange;
 }
 
 .noPieceHere {
     background-color: #f0d2b4;
+}
+
+.boardGame {
+    display: flex;
+    justify-content: center;
 }
