@@ -1,6 +1,7 @@
 /**
  * Game State Data
  */
+
 const board = [
     null, 0, null, 1, null, 2, null, 3, 
     4, null, 5, null, 6, null, 7, null, 
@@ -13,8 +14,19 @@ const board = [
 ]
 
 /**
+ * Cached Variables 
+ * Parses pieceId's and returns the index of that piece's place on the baord
+ */
+
+let findPiece = function (pieceId) {
+    let parsed = parseInt(pieceId);
+    return board.indexOf(parsed);
+};
+
+/**
  * DOM references
  */
+
 const cells = document.querySelectorAll("td");
 let redPieces = document.querySelectorAll("p");
 let blackPieces = document.querySelectorAll("span");
@@ -25,6 +37,7 @@ const divider = document.querySelector("#divider");
 /**
  * Player Properties
  */
+
 let turn = true;
 let redScore = 12;
 let blackScore = 12;
@@ -44,9 +57,11 @@ let selectedPiece  = {
     minusFourteenthSpace: false,
     minusEighteenthSpace: false
 }
+
 /**
  * Initialize event listeners on pieces
  */
+
 function givePiecesEventListeners() {
     if (turn) {
         for (let i = 0; i < redPieces.length; i++) {
@@ -58,9 +73,11 @@ function givePiecesEventListeners() {
         }
     }
 }
+
 /**
  * Hold the length of the players piece count
  */
+
 function getPlayerPieces() {
     if (turn) {
         playerPieces = redPieces;
@@ -70,17 +87,21 @@ function getPlayerPieces() {
     removeCellonclick();
     resetBoarders();
 }
+
 /**
  * Removes the attribute onlick
  */
+
 function removeCellonclick() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].removeAttribute("onclick");
     }
 }
+
 /**
  * Resets borders to default
  */
+
 function resetBoarders() {
     for (let i = 0; i < playerPieces.length; i++) {
         playerPieces[i].style.border = "1px double white";
@@ -88,9 +109,11 @@ function resetBoarders() {
     resetSelectedPieceProperties();
     getSelectedPiece();
 }
+
 /**
  * Reset selected piece properties
  */
+
 function resetSelectedPieceProperties() {
     selectedPiece.pieceId = -1;
     selectedPiece.pieceId = -1;
@@ -103,4 +126,27 @@ function resetSelectedPieceProperties() {
     selectedPiece.minusNinthSpace = false;
     selectedPiece.minusFourteenthSpace = false;
     selectedPiece.minusEighteenthSpace = false;
+}
+
+/**
+ * Gets ID and index of the board cell its on
+ */
+
+function getPlayerPieces() {
+    selectedPiece.pieceId = parseInt(event.target.id);
+    selectedPiece.indexOfBoardPiece = findPiece(selectedPiece.pieceId);
+    isPieceKing();
+}
+
+/**
+ * Checks if selected piece is a king
+ */
+
+function isPieceKing() {
+    if (document.getElementById(selectedPiece.pieceId).classList.contains("king")) {
+        selectedPiece.isKing = true;
+    } else {
+        selectedPiece.isKing = false;
+    }
+    getAvailableSpaces();
 }
