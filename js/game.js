@@ -23,3 +23,27 @@ let blackPieces = document.querySelectorAll("span");
 const redTurnText = document.querySelectorAll("red-turn-text");
 const blackTurnText = document.querySelectorAll("black-turn-text");
 const divider = document.querySelector("#divider");
+
+/**
+ * Player Properties
+ */
+
+let turn = true;
+let redScore = 12;
+let blackScore = 12;
+let playerPieces;
+
+
+let selectedPiece  = {
+    pieceId: -1,
+    indexOfBoardPiece: -1,
+    isKing: false,
+    seventhSpace: false,
+    ninthSpace: false,
+    fourteenthSpace: false,
+    eighteenthSpace: false,
+    minusSeventhSpace: false,
+    minusNinthSpace: false,
+    minusFourteenthSpace: false,
+    minusEighteenthSpace: false
+}
