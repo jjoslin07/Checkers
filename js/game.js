@@ -70,3 +70,15 @@ function getPlayerPieces() {
     removeCellonclick();
     resetBoarders();
 }
+/**
+ * Removes the attribute onlick
+ */
+function removeCellonclick() {
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].removeAttribute("onclick");
+    }
+}
+/**
+ * Resets borders to default
+ */
+
