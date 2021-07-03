@@ -297,10 +297,10 @@ function giveCellsClick() {
         cells[selectedPiece.indexOfBoardPiece - 9].setAttribute("onclick", "makeMove(-9)");
     }
     if (selectedPiece.minusFourteenthSpace) {
-        cells[selectedPiece.indexOfBoardPiece - 14].setAttribute("onlick", "makeMove(-14)");
+        cells[selectedPiece.indexOfBoardPiece - 14].setAttribute("onclick", "makeMove(-14)");
     }
     if (selectedPiece.minusEighteenthSpace) {
-        cells[selectedPiece.indexOfBoardPiece - 18].setAttribute("onlick", "makeMove(-18)");
+        cells[selectedPiece.indexOfBoardPiece - 18].setAttribute("onclick", "makeMove(-18)");
     }
 }
 
@@ -316,7 +316,7 @@ function makeMove(number) {
             cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<p class="red-piece king" id="${selectedPiece.pieceId}"></p>`;
             redsPieces = document.querySelectorAll("p");
         } else {
-            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<p class="red-piece" id="$selectedPiece.pieceId}"></p>`;
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<p class="red-piece" id="${selectedPiece.pieceId}"></p>`;
             redsPieces = document.querySelectorAll("p");
         }
     } else {
