@@ -40,3 +40,21 @@ td {
     display: flex;
     justify-content: center;
 }
+.playersTurns {
+    display: flex;
+    justify-content: center;
+    padding:10px;
+
+}
+.black-turn-text{
+    color: grey;
+}
+.red-turn-text,
+.black-turn-text {
+    padding: 10px;
+    font-size: 30px;
+}
+#divider{
+    font-size: 40px;
+    font-weight: 800;
+}
