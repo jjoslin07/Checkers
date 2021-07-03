@@ -30,8 +30,8 @@ let findPiece = function (pieceId) {
 const cells = document.querySelectorAll("td");
 let redsPieces = document.querySelectorAll("p");
 let blacksPieces = document.querySelectorAll("span");
-const redTurnText = document.querySelectorAll("red-turn-text");
-const blackTurnText = document.querySelectorAll("black-turn-text");
+const redTurnText = document.querySelectorAll(".red-turn-text");
+const blackTurnText = document.querySelectorAll(".black-turn-text");
 const divider = document.querySelector("#divider");
 
 /**
@@ -137,7 +137,7 @@ function resetSelectedPieceProperties() {
  * Gets ID and index of the board cell its on
  */
 
-function getPlayerPieces() {
+function getSelectedPiece() {
     selectedPiece.pieceId = parseInt(event.target.id);
     selectedPiece.indexOfBoardPiece = findPiece(selectedPiece.pieceId);
     isPieceKing();
