@@ -12,6 +12,7 @@ td {
     background-color: black;
     border: 1px double white;
     border-radius: 50%;
+    display: inline-block;
 }
 .red-piece {
     width: 30px;
