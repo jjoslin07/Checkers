@@ -68,12 +68,12 @@ let selectedPiece  = {
 
 function givePiecesEventListeners() {
     if (turn) {
-        for (let i = 0; i < redPieces.length; i++) {
-            redPieces[i].addEventListener("click", getPlayerPieces);
+        for (let i = 0; i < redsPieces.length; i++) {
+            redsPieces[i].addEventListener("click", getPlayerPieces);
         }
     } else {
-        for (let i = 0; i < blackPieces.length; i++) {
-            blackPieces[i].addEventListener("click", getPlayerPieces);
+        for (let i = 0; i < blacksPieces.length; i++) {
+            blacksPieces[i].addEventListener("click", getPlayerPieces);
         }
     }
 }
@@ -85,16 +85,16 @@ function givePiecesEventListeners() {
 
 function getPlayerPieces() {
     if (turn) {
-        playerPieces = redPieces;
+        playerPieces = redsPieces;
     } else {
-        playerPieces = blackPieces;
+        playerPieces = blacksPieces;
     }
     removeCellonclick();
     resetBoarders();
 }
 
 /**
- * Removes possibole moves from the old selected piece (This is needed because the user might re-select a piece)
+ * Removes possible moves from the old selected piece (This is needed because the user might re-select a piece)
  */
 
 function removeCellonclick() {
